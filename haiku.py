@@ -19,7 +19,7 @@ for line in sys.stdin.readlines():
 			words=line.split()
 			fine=True
 			part=""
-			for lc in [5, 7]:
+			for lc in [5, 6]:
 				if(fine):
 					for i in range(1, len(words)):
 						chunk=" ".join(words[:i])
