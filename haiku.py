@@ -19,19 +19,20 @@ for line in sys.stdin.readlines():
 			words=line.split()
 			fine=True
 			part=""
-			for lc in [5, 7, 5]:
+			for lc in [5, 7]:
 				if(fine):
 					for i in range(1, len(words)):
 						chunk=" ".join(words[:i])
 						count=len(re.findall(syllableR, chunk))
 						if(count==lc):
 							part=part+chunk+"\n"
+							words=words[i:]
 							break
-						if(count>5):
+						if(count>lc):
 							fine=False
 							break
 			if(fine):
-				candidates.append(part)
+				candidates.append(part+(" ".join(words)))
 if(len(candidates)<1):
 	sys.exit(1)
 print(r.choice(candidates))
