@@ -6,7 +6,7 @@ r=random.Random()
 
 vowel='[aeiouAEIOU]'
 consonant='[bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ]'
-syllable='('+consonant+'+'+vowel+'+'+consonant+'+|\s'+vowel+'+'+consonant+'+|'+consonant+'+'+vowel+'+\s)'
+syllable='('+consonant+'+'+vowel+'+'+consonant+'+|\s'+vowel+'+'+consonant+'+|'+consonant+'+'+vowel+'+\s|\s'+vowel+'+\s)'
 
 syllableR = re.compile(syllable)
 
